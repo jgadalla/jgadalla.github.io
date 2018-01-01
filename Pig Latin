@@ -1,0 +1,38 @@
+import javax.swing.JOptionPane;
+public class PigLatin
+{
+    public static void main()
+    {
+        String str = JOptionPane.showInputDialog("Enter a five word sentence");
+        int length = str.length ();
+        int space1 = str.indexOf(" ");
+        String word1 = str.substring(0,space1);
+        String str2 = str.substring(space1+1,length);
+        int length2 = str2.length ();
+        int space2 = str2.indexOf(" ");
+        String word2 = str2.substring(0,space2);
+        String str3 = str2.substring(space2+1,length2);
+        int length3 = str3.length ();
+        int space3 = str3.indexOf(" ");
+        String word3 = str3.substring(0,space3);
+        String str4 = str3.substring(space3+1,length3);
+        int length4 = str4.length ();
+        int space4 = str4.indexOf(" ");
+        String word4 = str4.substring(0,space4);
+        String word5 = str4.substring(space4+1,length4);
+        String wordPig1 = PigLatin.toPig(word1);
+        String wordPig2 = PigLatin.toPig(word2);
+        String wordPig3 = PigLatin.toPig(word3);
+        String wordPig4 = PigLatin.toPig(word4);
+        String wordPig5 = PigLatin.toPig(word5);
+        System.out.println(wordPig1+" "+wordPig2+" "+wordPig3+" "+wordPig4+" "+wordPig5);
+    }
+    public static String toPig(String word)
+    {
+        String firstLet = word.substring(0,1);
+        int wordLen = word.length();
+        String wordRest = word.substring(1,wordLen);
+        String wordPig = wordRest+firstLet+"ay";
+        return wordPig;
+    }
+}
